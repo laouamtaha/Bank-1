@@ -1,0 +1,83 @@
+{
+    "name": "ritechoice23/laravel-chat-engine",
+    "description": "A UI-agnostic, transport-agnostic, polymorphic chat engine for Laravel with message versioning, reactions, bookmarks, and delivery tracking.",
+    "keywords": [
+        "laravel",
+        "chat",
+        "messaging",
+        "conversations",
+        "real-time",
+        "eloquent",
+        "polymorphic",
+        "chat-engine",
+        "ritechoice23"
+    ],
+    "homepage": "https://github.com/ritechoice23/laravel-chat-engine",
+    "support": {
+        "issues": "https://github.com/ritechoice23/laravel-chat-engine/issues",
+        "source": "https://github.com/ritechoice23/laravel-chat-engine"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daramola Babatunde Ebenezer",
+            "email": "daramolatunde23@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "spatie/laravel-package-tools": "^1.16",
+        "illuminate/contracts": "^11.0||^12.0",
+        "ritechoice23/laravel-reactions": "^1.0",
+        "ritechoice23/laravel-saveable": "^1.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.14",
+        "nunomaduro/collision": "^8.8",
+        "larastan/larastan": "^3.0",
+        "orchestra/testbench": "^10.0.0||^9.0.0",
+        "pestphp/pest": "^4.0",
+        "pestphp/pest-plugin-arch": "^4.0",
+        "pestphp/pest-plugin-laravel": "^4.0",
+        "phpstan/extension-installer": "^1.4",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
+        "phpstan/phpstan-phpunit": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ritechoice23\\ChatEngine\\": "src/",
+            "Ritechoice23\\ChatEngine\\Database\\Factories\\": "database/factories/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ritechoice23\\ChatEngine\\Tests\\": "tests/",
+            "Workbench\\App\\": "workbench/app/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@composer run prepare",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ritechoice23\\ChatEngine\\ChatEngineServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

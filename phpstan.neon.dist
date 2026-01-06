@@ -1,0 +1,23 @@
+includes:
+    - phpstan-baseline.neon
+
+parameters:
+    level: 5
+    paths:
+        - src
+        - config
+        - database
+    tmpDir: build/phpstan
+    checkOctaneCompatibility: true
+    checkModelProperties: true
+    reportUnmatchedIgnoredErrors: false
+    ignoreErrors:
+        # CanChat trait is a public API for package consumers - used in tests/Models/User.php
+        - identifier: trait.unused
+          path: src/Traits/CanChat.php
+        # MorphToMany returns proper Thread models - PHPStan inference is limited here
+        - identifier: return.type
+          path: src/Traits/CanChat.php
+        # Pluck column name is valid but PHPStan can't infer it from MorphToMany
+        - identifier: argument.type
+          path: src/Traits/CanChat.php
